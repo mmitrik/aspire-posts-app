@@ -14,6 +14,11 @@ app.add_middleware(
 )
 
 
+@app.get("/")
+def root():
+    return {"status": "ok", "service": "Posts API"}
+
+
 # ── Handles ──────────────────────────────────────────────────────────────────
 
 @app.post("/handles", response_model=HandleResponse, status_code=201)

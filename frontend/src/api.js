@@ -1,4 +1,4 @@
-const API_BASE = process.env.REACT_APP_API_URL || "http://localhost:8000";
+const API_BASE = window.__RUNTIME_CONFIG__?.API_URL || process.env.REACT_APP_API_URL || "http://localhost:8000";
 
 export async function createHandle(handle) {
   const res = await fetch(`${API_BASE}/handles`, {
